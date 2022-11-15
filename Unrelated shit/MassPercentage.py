@@ -115,10 +115,9 @@ for i in range(numOfElements):
   amounts.append(amount)
 
 individualMasses = []
-for i in range(len(elements)):
-  individualMasses.append(mapping[elements[i]]*amounts[i])
 totalMass = 0
 for i in range(len(elements)):
+  individualMasses.append(mapping[elements[i]]*amounts[i])
   totalMass += mapping[elements[i]] * amounts[i]
 
 for i in range(len(elements)):

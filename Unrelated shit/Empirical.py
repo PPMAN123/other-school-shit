@@ -116,3 +116,10 @@ for i in range(numOfElements):
   elements.append(element)
   percents.append(percentage)
 
+molesPerMolecule = []
+for i in range(len(elements)):
+  molesPerMolecule.append(percents[i]/float(mapping[elements[i]]))
+
+smallestNum = min(molesPerMolecule)
+for i in range(len(elements)):
+  print(elements[i], molesPerMolecule[i]/smallestNum)
