@@ -1,5 +1,3 @@
-import math
-
 mapping = {
 'H':1.007,
 'He':4.002,
