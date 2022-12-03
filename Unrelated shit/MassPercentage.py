@@ -122,3 +122,5 @@ for i in range(len(elements)):
 
 for i in range(len(elements)):
   print(elements[i], (individualMasses[i]/totalMass)*100)
+
+print(totalMass)
