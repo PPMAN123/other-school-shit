@@ -152,7 +152,20 @@ for product in products:
     acc += masses[splitArray[i]]*int(splitArray[i+1])
   productMolarMasses.append(acc)
 
-print(reactantMolarMasses)
-print(productMolarMasses)
 
+#get index of limitant
+minNum = float("inf")
+limitingIndex = 0
+for i in range(len(reactants)):
+  if (reactantMasses[i]/reactantMolarMasses[i])/reactantCoefficients[i] < minNum:
+    minNum = (reactantMasses[i]/reactantMolarMasses[i])/reactantCoefficients[i]
+    limitingIndex = i
 
+usableMoles = reactantMasses[limitingIndex]/reactantMolarMasses[i]
+
+resultingMasses = []
+for i in range(len(products)):
+  resultingMasses.append((usableMoles*productCoefficients[i]*productMolarMasses[i])/reactantCoefficients[limitingIndex])
+
+for i in range(len(resultingMasses)):
+  print(str(resultingMasses[i]) + "g of", products[i].replace('1', ''))
